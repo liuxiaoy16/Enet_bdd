@@ -79,3 +79,9 @@ python main.py -m test --save-dir save/folder/ --name model_name --dataset name 
 - [``test.py``](https://github.com/davidtvs/PyTorch-ENet/blob/master/test.py): Defines the ``Test`` class which is responsible for testing the model.
 - [``train.py``](https://github.com/davidtvs/PyTorch-ENet/blob/master/train.py): Defines the ``Train`` class which is responsible for training the model.
 - [``transforms.py``](https://github.com/davidtvs/PyTorch-ENet/blob/master/transforms.py): Defines image transformations to convert an RGB image encoding classes to a ``torch.LongTensor`` and vice versa.
+
+I added the deepdrive.py for loading deepdrive dataset. And changed some code to adapt it. For running, we could write the command: 
+```
+python main.py -m train --save-dir save/folder/ --name model_name --dataset deepdrive --dataset-dir path/root_directory/
+```
+
