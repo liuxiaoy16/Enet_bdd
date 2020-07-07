@@ -38,7 +38,6 @@ class DeepDrive(data.Dataset):
     img_extension = '.jpg'
     # Default encoding for pixel value, class name, and class color
     color_encoding = OrderedDict([
-    color_encoding = OrderedDict([
         (  'road' , (128, 64, 128) ),
         (  'sidewalk' , (244, 35,232) ),
         (  'building' , ( 70, 70, 70) ),
@@ -72,7 +71,7 @@ class DeepDrive(data.Dataset):
         self.transform = transform
         self.label_transform = label_transform
         self.loader = loader
-
+        
         if self.mode.lower() == 'train':
             # Get the training data and labels filepaths
             self.train_data = utils.get_files(
@@ -137,6 +136,7 @@ class DeepDrive(data.Dataset):
 
         if self.label_transform is not None:
             label = self.label_transform(label)
+            label[label == 255] = 19
 
         return img, label
 
