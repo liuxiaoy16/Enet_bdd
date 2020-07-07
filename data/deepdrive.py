@@ -22,16 +22,16 @@ class DeepDrive(data.Dataset):
 
     """
     # Training dataset root folders
-    train_folder = 'images/100k/train'
+    train_folder = 'images/train'
     train_lbl_folder = 'labels_jpg/train'
 
     # Validation dataset root folders
-    val_folder = 'images/100k/val'
+    val_folder = 'images/val'
     val_lbl_folder = 'labels_jpg/val'
 
     # Test dataset root folders
-    test_folder = 'images/100k/val'
-    test_lbl_folder = 'color_labels_RGB/val'
+    test_folder = 'images/val'
+    test_lbl_folder = 'labels_jpg/val'
 
     # Images extension
  #   img_extension = '.png'
