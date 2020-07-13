@@ -30,7 +30,9 @@ class Train:
 
         Returns:
         - The epoch loss (float).
-
+        
+        loss_list = [] #加的
+        
         """
         self.model.train()
         epoch_loss = 0.0
@@ -53,6 +55,8 @@ class Train:
 
             # Keep track of loss for current epoch
             epoch_loss += loss.item()
+            
+            loss_list.append(loss.item()) #加的
 
             # Keep track of the evaluation metric
             self.metric.add(outputs.detach(), labels.detach())
@@ -60,4 +64,4 @@ class Train:
             if iteration_loss:
                 print("[Step: %d] Iteration loss: %.4f" % (step, loss.item()))
 
-        return epoch_loss / len(self.data_loader), self.metric.value()
+        return epoch_loss / len(self.data_loader), self.metric.value(), loss_list #加的
